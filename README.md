@@ -21,6 +21,7 @@ Implementar uma Rest API com endpoint separado para cada um dos métodos.
 - Imprimir a pilha;
 
 **Funcionamento da Pilha:**
+
 ![image](https://user-images.githubusercontent.com/81869607/211394569-a1b3f8da-946d-43d5-8faf-775739ff3884.png)
 
 [Link](https://www.treinaweb.com.br/blog/o-que-e-e-como-funciona-a-estrutura-de-dados-pilha#:~:text=Pilhas%20s%C3%A3o%20estruturas%20de%20dados,pilha%20quando%20precisarmos%20remov%C3%AA%2Dlo.)
