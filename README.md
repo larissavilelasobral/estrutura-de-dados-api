@@ -61,6 +61,8 @@ pip install flask
 
 ```
 
+![image](https://user-images.githubusercontent.com/81869607/211540328-1c702b8c-d61f-469c-acd0-ca5bef467d90.png)
+
 # Construir uma Rest API com FlaskAPI
 
 - [Link1](https://pythonbasics.org/flask-rest-api/)
