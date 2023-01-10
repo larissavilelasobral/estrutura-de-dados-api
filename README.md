@@ -32,3 +32,31 @@ Todos os métodos devem ter testes unitarios.
 
 ## Dados
 Os dados das pilhas e filas podem ser texto, números, objetos etc...
+
+## Desenvolvimento
+
+- Python3
+- FlaskApi
+
+```python
+pip install flask
+```
+
+```python
+#1. Objetivo - Criar uma api que disponibiliza a consulta, adição e exclusão de livros.
+
+#2. URL base - localhost
+
+#3. Endpoints fila:
+  #-- localhost/fila/livros (GET)
+  #-- localhost/fila/livros (POST)
+  #-- localhost/fila/livros (DELETE)
+
+#3. Endpoints pilha:
+  #-- localhost/pilha/livros (GET)
+  #-- localhost/pilha/livros (POST)
+  #-- localhost/pilha/livros (DELETE)
+
+#4. Quais recursos
+
+```
