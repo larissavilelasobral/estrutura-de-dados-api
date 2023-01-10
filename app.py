@@ -56,8 +56,8 @@ livros = [
 ]
 
 # Imprimir todos os livros
-@app.route('/livros')
-def imprimir_livros():
+@app.route('/livros', methods=['GET'])
+def obter_livros():
   return jsonify(livros)
 
 app.run(port=5000,host='localhost', debug=True)
