@@ -55,9 +55,26 @@ livros = [
   },
 ]
 
-# Imprimir todos os livros
+# Imprimir todos os livros da fila (GET)
 @app.route('/livros', methods=['GET'])
 def obter_livros():
   return jsonify(livros)
 
+# Adicionar livro na fila (POST)
+@app.route('/livro', methods=['POST'])
+def adicionar_livros():
+  novo_livro = request.get_json()
+  
+  livros.append(novo_livro)
+  
+  return jsonify(livros)
+
+# Deletar livro da fila (DELETE)
+@app.route('/livro', methods=['DELETE'])
+def excluir_livro():
+  if not len(livros) == 0:
+    del livros[0]
+  
+  return jsonify(livros)
+ 
 app.run(port=5000,host='localhost', debug=True)

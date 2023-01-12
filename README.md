@@ -67,3 +67,9 @@ pip install flask
 
 - [Link1](https://pythonbasics.org/flask-rest-api/)
 - [Link2](https://www.geeksforgeeks.org/python-build-a-rest-api-using-flask/)
+
+```python
+# Imprimir todos os livros da pilha (GET)
+# Adicionar livro na pilha (POST)
+# Deletar livro da pilha (DELETE)
+```
