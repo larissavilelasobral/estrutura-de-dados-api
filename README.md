@@ -73,3 +73,7 @@ pip install flask
 # Adicionar livro na pilha (POST)
 # Deletar livro da pilha (DELETE)
 ```
+
+append -- > Adicionar um único elemento ao final de uma lista.
+
+del -- > 
