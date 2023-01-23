@@ -77,3 +77,36 @@ pip install flask
 append -- > Adicionar um único elemento ao final de uma lista.
 
 del -- > 
+
+```python
+my_api/
+  app/
+    controllers/
+      users_controller.py
+      products_controller.py
+    models/
+      users.py
+      products.py
+    routes/
+      users.py
+      products.py
+  tests/
+    controllers/
+      test_users_controller.py
+      test_products_controller.py
+    models/
+      test_users.py
+      test_products.py
+  config/
+    config.py
+  docs/
+    api_docs.md
+```
+
+- A pasta app contém os arquivos relacionados à lógica da aplicação.
+- A pasta controllers contém os arquivos responsáveis por lidar com as solicitações HTTP e chamar as operações dos modelos.
+- A pasta models contém os arquivos responsáveis por lidar com as operações de banco de dados.
+- A pasta routes contém os arquivos responsáveis por mapear as rotas da API para os controladores.
+- A pasta tests contém os arquivos de teste para a aplicação.
+- A pasta config contém arquivos de configuração para a aplicação.
+- A pasta docs contém a documentação da API.
