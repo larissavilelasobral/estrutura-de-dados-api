@@ -1,3 +1,5 @@
+from flask import Flask, jsonify, request
+
 livros = [
   {
       'id': 1,
@@ -50,10 +52,11 @@ livros = [
       'autor': 'Daniel J. Barrett'
   },
 ]
+
 # https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30
 class BooksRepository():
   def __init__(self):
-    print('teste')
+    print('BooksReposiroey')
   # def get books
   # def adicionar
   # deletar

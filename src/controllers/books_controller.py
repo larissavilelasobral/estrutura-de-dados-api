@@ -1,28 +1,72 @@
-from flask import Flask, jsonify, request
-from models.books import Livro
+from flask import jsonify, request
 
-app = Flask(__name__)
+livros = [
+  {
+      'id': 1,
+      'título': 'Código limpo: Habilidades práticas do Agile Software',
+      'autor': 'Robert C. Martin'
+  },
+  {
+      'id': 2,
+      'título': 'Arquitetura limpa: O guia para estrutura de software',
+      'autor': 'Robert C. Martin'
+  },
+  {
+      'id': 3,
+      'título': 'Microsserviços Prontos Para a Produção',
+      'autor': 'Susan J. Fowler'
+  },
+  {
+      'id': 4,
+      'título': 'Domain-Driven Design: Atacando as complexidades do software',
+      'autor': 'Eric Evans'
+  },
+  {
+      'id': 5,
+      'título': 'Refatoração: Aperfeiçoando o Design de Códigos',
+      'autor': 'Martin Fowler'
+  },
+  {
+      'id': 6,
+      'título': 'O Programador Pragmático: De Aprendiz a Mestre',
+      'autor': 'Andrew Hunt & David Thomas'
+  },
+  {
+      'id': 7,
+      'título': 'Entendendo Algoritmos: Um Guia Ilustrado Para Programadores',
+      'autor': 'Aditya Y. Bhargava'
+  },
+  {
+      'id': 8,
+      'título': 'Estruturas de Dados e Algoritmos com JavaScript',
+      'autor': 'Loiane Groner'
+  },
+  {
+      'id': 9,
+      'título': 'Aprendendo TypeScript: Melhore Suas Habilidades',
+      'autor': 'Josh Goldberg'
+  },
+  {
+      'id': 10,
+      'título': 'Linux Eficiente na Linha de Comando',
+      'autor': 'Daniel J. Barrett'
+  },
+]
 
-def iniciar_rotas():
-  
-  @app.route("/")
-  def root():
+def root():
     return "<h1>API em Flask<h1>"
 
-
-  @app.route('/fila/livros', methods=['GET'])
-  def obter_livros():
+def get_books():
     return jsonify(livros)
 
-  @app.route('/fila/livro', methods=['POST'])
-  def adicionar_livros():
+def add_book():
     body = request.get_json()
     
     ids = len(livros)
     if ids:
-      new_id = ids + 1
+        new_id = ids + 1
     else:
-      new_id = 1
+        new_id = 1
       
     novo_livro = {
       "id": new_id,
@@ -32,13 +76,11 @@ def iniciar_rotas():
 
     livros.append(novo_livro)
     
-    return jsonify(novo_livro)
-
-  @app.route('/fila/livro', methods=['DELETE'])
-  def excluir_livro():
-    
-    if not len(livros) == 0:
-      del livros[0]
-    
     return jsonify(livros)
 
+def remove_book():
+    if not len(livros) == 0:
+        del livros[0]
+    
+    return jsonify(livros)
+  
