@@ -1,34 +1,25 @@
 from flask import jsonify, request
-from repository.books_repository import livros
+from repository.books_repository import BooksRepository
 
-def root():
-    return "<h1>API em Flask<h1>"
+class Controller:
+    def __init__(self):
+        self.books_repository =  BooksRepository()
+        
+    def root(self):
+        return self.books_repository.root()
 
-def get_books():
-    return jsonify(livros)
+    def get_books(self):
+        
+        return self.books_repository.get_books()
 
-def add_book():
-    body = request.get_json()
+    def add_book(self,):
+        body = request.get_json()
+        
+        title = body['name']
+        author = body['author']
+        
+        return self.books_repository.add_book(title, author)
+
+    def delete_book(self):
+        return self.books_repository.delete_book()
     
-    ids = len(livros)
-    if ids:
-        new_id = ids + 1
-    else:
-        new_id = 1
-      
-    novo_livro = {
-      "id": new_id,
-      "título": body["título"],
-      "autor": body["autor"]
-    }
-
-    livros.append(novo_livro)
-    
-    return jsonify(livros)
-
-def remove_book():
-    if not len(livros) == 0:
-        del livros[0]
-    
-    return jsonify(livros)
-  

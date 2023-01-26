@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request
+from models.books import Book
 
-livros = [
+class BooksRepository():
+  def __init__(self):
+    self.books_db = [
   {
       'id': 1,
       'título': 'Código limpo: Habilidades práticas do Agile Software',
@@ -52,34 +55,19 @@ livros = [
       'autor': 'Daniel J. Barrett'
   },
 ]
-
-# https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30
-class BooksRepository():
-  def __init__(self):
-    print('BooksReposiroey')
-  # def get books
-  # def adicionar
-  # deletar
   
-  def add_book(self):
-    body = request.get_json()
-    
-    #ternária
-    new_id = len(livros) + 1 if livros else 1
-    
-    novo_livro = {
-      "id": new_id,
-      "título": body["título"],
-      "autor": body["autor"]
-    }
-
-    livros.append(novo_livro)
-    
-    return novo_livro, 201
+  def root(self):
+    return "<h1>API em Flask<h1>"
+ 
+  def get_books(self):
+    return jsonify(self.books_db)
+      
+  def add_book(self, title, author):
+    new_book = Book(title, author)
+    self.books_db.append(new_book)
+    # retornar o resultado em json? aqui no repository ou em controller
+    return jsonify(new_book), 201
   
   def delete_book(self):
-    # primeiro elemento a ser adicionado é o primeiro a ser removido.
-      if not len(livros) == 0:
-        del livros[0]
-        
-      return livros
+    if not len(self.books_db) == 0:
+      del self.books_db[0]

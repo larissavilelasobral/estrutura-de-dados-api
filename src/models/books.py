@@ -1,25 +1,21 @@
 import uuid
-from repository.books_repository import livros  
+from repository.books_repository import books_db  
 
-class Livro:
+class Book:
   
-  def __init__(self, título, autor):
-    # atributos do livro
-    # o construtor inicializa esses atributos quando um objeto da classe Livro é criado
+  def __init__(self, title, author):
       self.id = uuid.uuid4()
-      self.título = título
-      self.autor = autor
+      self.título = title
+      self.autor = author
 
-# metodos para obter e atualizar informações sobre um livro especifico ou para adicionar e remover livros da lista
-  def obter_livro(id):
-    for livro in livros:
+  def get_book_by_id(id):
+    for livro in books_db:
         if livro.id == id:
             return livro
     return None
   
   def atualizar_livro(id, título, autor):
-    # retorna livro
-    livro = Livro.obter_livro(id)
+    livro = Book.get_book_by_id(id)
     if livro:
         livro.título = título
         livro.autor = autor
