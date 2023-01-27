@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import jsonify
 from models.books import Book
 
 class BooksRepository():
@@ -6,53 +6,53 @@ class BooksRepository():
     self.books_db = [
   {
       'id': 1,
-      'título': 'Código limpo: Habilidades práticas do Agile Software',
-      'autor': 'Robert C. Martin'
+      'title': 'Código limpo: Habilidades práticas do Agile Software',
+      'author': 'Robert C. Martin'
   },
   {
       'id': 2,
-      'título': 'Arquitetura limpa: O guia para estrutura de software',
-      'autor': 'Robert C. Martin'
+      'title': 'Arquitetura limpa: O guia para estrutura de software',
+      'author': 'Robert C. Martin'
   },
   {
       'id': 3,
-      'título': 'Microsserviços Prontos Para a Produção',
-      'autor': 'Susan J. Fowler'
+      'title': 'Microsserviços Prontos Para a Produção',
+      'author': 'Susan J. Fowler'
   },
   {
       'id': 4,
-      'título': 'Domain-Driven Design: Atacando as complexidades do software',
-      'autor': 'Eric Evans'
+      'title': 'Domain-Driven Design: Atacando as complexidades do software',
+      'author': 'Eric Evans'
   },
   {
       'id': 5,
-      'título': 'Refatoração: Aperfeiçoando o Design de Códigos',
-      'autor': 'Martin Fowler'
+      'title': 'Refatoração: Aperfeiçoando o Design de Códigos',
+      'author': 'Martin Fowler'
   },
   {
       'id': 6,
-      'título': 'O Programador Pragmático: De Aprendiz a Mestre',
-      'autor': 'Andrew Hunt & David Thomas'
+      'title': 'O Programador Pragmático: De Aprendiz a Mestre',
+      'author': 'Andrew Hunt & David Thomas'
   },
   {
       'id': 7,
-      'título': 'Entendendo Algoritmos: Um Guia Ilustrado Para Programadores',
-      'autor': 'Aditya Y. Bhargava'
+      'title': 'Entendendo Algoritmos: Um Guia Ilustrado Para Programadores',
+      'author': 'Aditya Y. Bhargava'
   },
   {
       'id': 8,
-      'título': 'Estruturas de Dados e Algoritmos com JavaScript',
-      'autor': 'Loiane Groner'
+      'title': 'Estruturas de Dados e Algoritmos com JavaScript',
+      'author': 'Loiane Groner'
   },
   {
       'id': 9,
-      'título': 'Aprendendo TypeScript: Melhore Suas Habilidades',
-      'autor': 'Josh Goldberg'
+      'title': 'Aprendendo TypeScript: Melhore Suas Habilidades',
+      'author': 'Josh Goldberg'
   },
   {
       'id': 10,
-      'título': 'Linux Eficiente na Linha de Comando',
-      'autor': 'Daniel J. Barrett'
+      'title': 'Linux Eficiente na Linha de Comando',
+      'author': 'Daniel J. Barrett'
   },
 ]
   

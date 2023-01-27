@@ -1,4 +1,4 @@
-from flask import jsonify, request
+from flask import request
 from repository.books_repository import BooksRepository
 
 class Controller:
