@@ -1,14 +1,14 @@
 from flask import Blueprint
 from src.controllers.books_controller import Controller
 
+controller = Controller()
 # coleção/namespace de rotas
 books = Blueprint('books', __name__)
-controller = Controller()
 
 
 # marcador
 @books.route('/', methods=['GET'])
-def get_books():
+def root():
     return controller.root()
 
 
@@ -22,6 +22,6 @@ def add_book():
     return controller.add_book()
 
 
-@books.route('/books', methods=['POST'])
+@books.route('/books', methods=['DELETE'])
 def delete_book():
     return controller.delete_book()

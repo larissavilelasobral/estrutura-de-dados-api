@@ -1,6 +1,7 @@
 from flask import request
 from src.repository.books_repository import BooksRepository
 
+
 # receber requisição/dados do cliente, fazer verificações (gerenciar)
 class Controller:
     def __init__(self):
