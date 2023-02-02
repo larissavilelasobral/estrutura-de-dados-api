@@ -110,3 +110,13 @@ my_api/
 - A pasta tests contém os arquivos de teste para a aplicação.
 - A pasta config contém arquivos de configuração para a aplicação.
 - A pasta docs contém a documentação da API.
+
+_____________________________________________________
+
+1 - Rotas: as requisições HTTP são enviadas para as rotas, que determinam o endpoint da API.
+
+2 - Controladores: as requisições são direcionadas aos controladores associados às rotas. Os controladores são responsáveis por processar a requisição e realizar as operações necessárias.
+
+3 - Modelos: os controladores podem acessar os modelos para obter ou atualizar informações do banco de dados.
+
+4 - Retorno da resposta: depois de processar a requisição, os controladores formatam a resposta e a enviam de volta ao cliente.
