@@ -120,3 +120,15 @@ _____________________________________________________
 3 - Modelos: os controladores podem acessar os modelos para obter ou atualizar informações do banco de dados.
 
 4 - Retorno da resposta: depois de processar a requisição, os controladores formatam a resposta e a enviam de volta ao cliente.
+
+### Testes Unitários
+
+> Testes de Rota:
+*Verifica se as rotas estão funcionando corretamente e respondendo com o status correto e o corpo da resposta esperado.*
+
+Utilizando a biblioteca unittest:
+
+- Usamos o método setUp para instanciar a classe `BooksRepository` antes de cada teste. 
+- Em seguida, definimos o teste unitário para a função de exemplo `delete_book`.
+- Verificamos se o código de status retornado é 200 (sucesso) e se o título do livro deletado é igual ao título esperado.
+
