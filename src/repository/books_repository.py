@@ -15,26 +15,55 @@ class BooksRepository:
 
     def get_books(self):
         books = [book.__dict__ for book in self.books_db]
-        return jsonify(books)
+        response = {
+            "data": books,
+            "status_code": 200
+        }
+        return jsonify(response), 200
+    # verificar nome se tem numero ou caractere especial
+    # função de limpeza para tirar caracteres especiais
 
     def add_book(self, title, author):
         if not title or not author:
-            return jsonify({"error": "Título e autor são obrigatórios"}), 400
+            return jsonify({"error": "Título e autor são obrigatórios."}), 400
 
         new_book = Book(title, author)
         self.books_db.append(new_book)
-        # método __dict__ permite tratar objetos de classe como dicionários, facilitando a manipulação de seus atributos.
-        return jsonify(new_book.__dict__), 201
 
-        # new_book = Book(title, author)
-        # self.books_db.append(new_book)
-        # json_string = json.dumps([obj.__dict__ for obj in self.books_db], ensure_ascii=False, indent=4)
-        # return jsonify(json_string), 201
+        response = {
+            "data": [new_book.__dict__],
+            "status_code": 201
+        }
+
+        return jsonify(response), 201
 
     def delete_book(self):
         if not self.books_db:
             return jsonify({"error": "Não há livros para serem deletados"}), 400
 
-        book_title = self.books_db[0]
+        book = self.books_db[0]
         del self.books_db[0]
-        return jsonify({"message": "Livro deletado com sucesso", "book": book_title.__dict__}), 200
+
+        response = {
+            "data": [book.__dict__],
+            "message": "Livro deletado com sucesso",
+            "status_code": 204
+        }
+        return jsonify(response), 204
+        # padrão de response
+
+    # {
+    #     data: [
+    #         {
+    #             "author": "Robert C. Martin",
+    #             "id": "3580aa47-6137-479c-9b88-5220d53238d1",
+    #             "title": "Código limpo: Habilidades práticas do Agile Software"
+    #         },
+    #         {
+    #             "author": "Robert C. Martin",
+    #             "id": "69053f51-4580-4dab-851c-c688eab87e24",
+    #             "title": "Arquitetura limpa: O guia para estrutura de software"
+    #         }
+    #     ],
+    #  status_code: 201
+    # }

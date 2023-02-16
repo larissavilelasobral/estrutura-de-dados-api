@@ -17,6 +17,7 @@ class Controller:
 
         title = body['title']
         author = body['author']
+        # pegar mais dados para fazer mais regras de negocio, tratar os dados e realizar testes
 
         return self.books_repository.add_book(title, author)
 

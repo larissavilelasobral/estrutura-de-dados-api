@@ -132,3 +132,30 @@ Utilizando a biblioteca unittest:
 - Em seguida, definimos o teste unitário para a função de exemplo `delete_book`.
 - Verificamos se o código de status retornado é 200 (sucesso) e se o título do livro deletado é igual ao título esperado.
 
+### Adicionar mais dados na API e deixar ela mais completa
+
+```python
+class Livro:
+    def __init__(self, titulo, autor, descricao, editora, data_publicacao, num_paginas, isbn, idioma, genero, imagem_capa):
+        self.titulo = titulo
+        self.autor = autor
+        self.descricao = descricao
+        self.editora = editora
+        self.data_publicacao = data_publicacao
+        self.num_paginas = num_paginas
+        self.isbn = isbn
+        self.idioma = idioma
+        self.genero = genero
+        self.imagem_capa = imagem_capa
+```
+### Códigos de status HTTP mais comuns
+
+200 OK: A requisição foi bem sucedida.
+201 Created: A requisição foi bem sucedida e um novo recurso foi criado como resultado.
+204 No Content: A requisição foi bem sucedida, mas não há conteúdo para retornar (por exemplo, em uma requisição de exclusão).
+400 Bad Request: A requisição não pôde ser entendida ou foi malformada.
+401 Unauthorized: A autenticação falhou ou o usuário não tem permissão para acessar o recurso solicitado.
+403 Forbidden: O servidor entende a requisição, mas se recusa a processá-la. Diferente do status 401, a autenticação não irá resolver o problema.
+404 Not Found: O recurso solicitado não foi encontrado no servidor.
+500 Internal Server Error: O servidor encontrou um erro inesperado que impediu a requisição de ser completada.
+
