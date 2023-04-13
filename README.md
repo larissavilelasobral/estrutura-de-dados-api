@@ -159,3 +159,45 @@ class Livro:
 404 Not Found: O recurso solicitado não foi encontrado no servidor.
 500 Internal Server Error: O servidor encontrou um erro inesperado que impediu a requisição de ser completada.
 
+
+error handling python
+json api response
+json api response
+https://jsonapi.org/
+
+{
+    data: {...}
+    statusCode: 200,
+    message: "Livro adicionado com sucesso"
+}
+
+padrão resposta api
+- estudar tratamento de erro python
+- escrever os testes da aplicação com mock
+
+### Estrutura de pastas com testes:
+```markdown
+app/
+├── __init__.py
+├── controller/
+│   ├── __init__.py
+│   ├── example_controller.py
+│   └── test_example_controller.py
+├── models/
+│   ├── __init__.py
+│   ├── example_model.py
+│   └── test_example_model.py
+├── repository/
+│   ├── __init__.py
+│   ├── example_repository.py
+│   └── test_example_repository.py
+├── routes/
+│   ├── __init__.py
+│   ├── example_routes.py
+│   └── test_example_routes.py
+└── service/
+    ├── __init__.py
+    ├── example_service.py
+    └── test_example_service.py
+```
+

@@ -1,0 +1,2 @@
+class InvalidCoverImageError(Exception):
+    pass

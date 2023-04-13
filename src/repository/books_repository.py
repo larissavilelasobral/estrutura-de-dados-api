@@ -6,9 +6,32 @@ class BooksRepository:
     def __init__(self):
         self.books_db = []
 
-        self.books_db.append(Book('Código limpo: Habilidades práticas do Agile Software', 'Robert C. Martin'))
-        self.books_db.append(Book('Arquitetura limpa: O guia para estrutura de software', 'Robert C. Martin'))
-        self.books_db.append(Book('Microsserviços Prontos Para a Produção', 'Susan'))
+        self.books_db.append(Book(
+            'Código limpo: Habilidades práticas do Agile Software',
+            'Robert C. Martin',
+            'Este livro é uma referência essencial para qualquer programador que queira escrever código mais legível, '
+            'sustentável e de alta qualidade.',
+            'Alta Books',
+            '2010',
+            '464',
+            '978-8576082675',
+            'Português',
+            'Tecnologia/Programação',
+            'Sem Imagem'
+        ))
+        self.books_db.append(Book(
+            'Arquitetura limpa: O guia para estrutura de software',
+            'Robert C. Martin',
+            'Neste livro, o autor apresenta um guia prático para a criação de arquiteturas de software limpas e '
+            'sustentáveis.',
+            'Novatec Editora',
+            '2018',
+            '432',
+            '978-8575227249',
+            'Português',
+            'Tecnologia/Programação',
+            'Sem Imagem'
+        ))
 
     def root(self):
         return "<h1>API de Livros em Python/Flask!<h1>"
@@ -20,14 +43,12 @@ class BooksRepository:
             "status_code": 200
         }
         return jsonify(response), 200
-    # verificar nome se tem numero ou caractere especial
-    # função de limpeza para tirar caracteres especiais
 
-    def add_book(self, title, author):
+    def add_book(self, title, author, description, publisher, publication_date, num_pages, isbn, language, genre, cover_image):
         if not title or not author:
             return jsonify({"error": "Título e autor são obrigatórios."}), 400
 
-        new_book = Book(title, author)
+        new_book = Book(title, author, description, publisher, publication_date, num_pages, isbn, language, genre, cover_image)
         self.books_db.append(new_book)
 
         response = {
@@ -43,27 +64,10 @@ class BooksRepository:
 
         book = self.books_db[0]
         del self.books_db[0]
-
+        # não retorna nenhuma mensagem na api?
         response = {
             "data": [book.__dict__],
             "message": "Livro deletado com sucesso",
             "status_code": 204
         }
         return jsonify(response), 204
-        # padrão de response
-
-    # {
-    #     data: [
-    #         {
-    #             "author": "Robert C. Martin",
-    #             "id": "3580aa47-6137-479c-9b88-5220d53238d1",
-    #             "title": "Código limpo: Habilidades práticas do Agile Software"
-    #         },
-    #         {
-    #             "author": "Robert C. Martin",
-    #             "id": "69053f51-4580-4dab-851c-c688eab87e24",
-    #             "title": "Arquitetura limpa: O guia para estrutura de software"
-    #         }
-    #     ],
-    #  status_code: 201
-    # }
