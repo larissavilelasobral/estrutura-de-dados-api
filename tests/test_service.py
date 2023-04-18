@@ -36,7 +36,6 @@ class TestBooksService:
         add_book_mock = MagicMock()
         # atribui a função add_book do objeto books_repository para receber o objeto de teste add_book_mock
         self.books_repository.add_book = add_book_mock
-        #self.mock_db.append.return_value = None # append não ta sendo usado na funcao
 
         # act
         self.books_service.handle_book(body)
